@@ -7,6 +7,12 @@ window.onload = () => {
     
     for(let n = 0; n < dBoard.length; n++){
         dBoard[n].classList.add("square");
+        dBoard[n].addEventListener("mouseover", () => {
+            dBoard[n].classList.add("hover");
+        });
+        dBoard[n].addEventListener("mouseout", () => {
+            dBoard[n].classList.remove("hover");
+        });
         dBoard[n].addEventListener("click",() => {
             if(dBoard[n].innerHTML === "X" || dBoard[n].innerHTML === "O"){
                 return;
