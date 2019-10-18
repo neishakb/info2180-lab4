@@ -8,10 +8,13 @@ window.onload = () => {
      button.addEventListener("click", () => {
         for(let r = 0; r <dBoard.length; r++){
             dBoard[r].innerHTML = " ";
+            dBoard[r].classList.remove("X");
+            dBoard[r].classList.remove("O");
         }
 
         divstatus.innerHTML = "Move your mouse over a square and click to play an X or an O.";
         divstatus.classList.remove("you-won");
+
      });
 
      
