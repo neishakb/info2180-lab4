@@ -24,6 +24,7 @@ window.onload = () => {
                     response = "O";
                     if(possibleCombos("X")){
                         divstatus.innerHTML = "Congratulations! X is the Winner!";
+                        divstatus.classList.add("you-won");
                     }
                 }else{
                     dBoard[n].innerHTML = "O"
@@ -31,6 +32,7 @@ window.onload = () => {
                     response = "X";
                     if(possibleCombos("O")){
                         divstatus.innerHTML = "Congratulations! O is the Winner!";
+                        divstatus.classList.add("you-won");
                     }
                 }
            
@@ -44,7 +46,7 @@ window.onload = () => {
     const possibleCombos = (letter) => {
         //checking columns for winning combos
        for(let n = 0; n < 3; n++){
-           if(dBoard[n] === letter && dBoard[n + 3] === letter && dBoard[n + 6] === letter){
+           if((dBoard[n].innerHTML === letter) && (dBoard[n + 3].innerHTML === letter) && (dBoard[n + 6].innerHTML === letter)){
                //do something
                return true;
            }
@@ -52,14 +54,14 @@ window.onload = () => {
 
        //checking rows for winning combos
        for(let j = 0; j < 7; j+= 3){
-            if(dBoard[j] === letter && dBoard[j + 1] === letter && dBoard[j + 2] === letter){
+            if((dBoard[j].innerHTML === letter) && (dBoard[j + 1].innerHTML === letter) && (dBoard[j + 2].innerHTML === letter)){
                 //do something
                 return true;
             }
     
         }
 
-        if((dBoard[0] === letter && dBoard[4] === letter && dBoard[8] === letter) || (dBoard[2] === letter && dBoard[4] === letter && dBoard[6] === letter)){
+        if(((dBoard[0].innerHTML === letter) && (dBoard[4].innerHTML === letter) && (dBoard[8].innerHTML === letter)) || ((dBoard[2].innerHTML === letter) && (dBoard[4].innerHTML === letter) && (dBoard[6].innerHTML === letter))){
             return true;
 
         }
